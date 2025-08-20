@@ -1,4 +1,7 @@
-"""Base implementation for the prefix function."""
+"""Base implementation for the prefix function.
+
+See https://cp-algorithms.com/string/prefix-function.html for more details.
+"""
 
 
 def find_positions_of_query(text: str, query: str) -> list[int] | None:
