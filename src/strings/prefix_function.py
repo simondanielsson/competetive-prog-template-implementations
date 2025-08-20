@@ -36,6 +36,10 @@ def find_positions_of_query(text: str, query: str) -> list[int] | None:
         - We need to efficiently search for a prefix length `j` where two conditions hold:
             s[j] == s[i]   <- the letter after the prefix matches the new, rightmost letter
             else move back j = F[j-1], i.e. the length of the match of the next shorter prefix.
+
+    :param text: Text to search in.
+    :param query: String to query within the text.
+    :return: The indices on which query matched in text, or None if no matches.
     """
     if len(query) > len(text):
         return None
@@ -56,6 +60,11 @@ def find_positions_of_query(text: str, query: str) -> list[int] | None:
 
 
 def _create_prefix_func(string: str) -> list[int]:
+    """Create a prefix function for a string.
+
+    :param string: String to create prefix function for.
+    :return: The function values.
+    """
     prefix_func: list[int] = [-1] * len(string)
 
     # By definition, length of longest proper prefix matching a suffix is 0 if there's one element only (index 0)

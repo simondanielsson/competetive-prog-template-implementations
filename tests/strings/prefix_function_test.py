@@ -1,3 +1,5 @@
+"""Tests for prefix functions."""
+
 import pytest
 from src.strings.prefix_function import find_positions_of_query
 
@@ -14,4 +16,5 @@ from src.strings.prefix_function import find_positions_of_query
 def test_find_positions_of_query(
     text: str, query: str, positions: list[int] | None
 ) -> None:
+    """Test that find positions of query using prefix functions works."""
     assert positions == find_positions_of_query(text=text, query=query)
